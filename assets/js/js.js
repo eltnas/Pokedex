@@ -1,0 +1,1 @@
+window.PokeClass = new PokeClass();
