@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokedex</title>
+
+    <!-- Normalize CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+        integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Font Roboto -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./Assets/css/poke.css">
+</head>
+<body>
+
+    <div id="overlay"></div>
+
+    <div id="content">
+        <section class="poke-list">
+            <div class="title">
+                <img src="./Assets/img/pokemon-logo.png" />
+            </div>
+            <!-- Lista os Pokemons -->
+            <div class="list">
+                <div class="lista">
+                    <ol id="pokemonList" class="pokemons">
+                        <!-- ..... Pokemons here ..... -->
+                    </ol>
+                </div>
+                <div class="pagination">
+                    <button id="loadMoreButton" type="button">
+                        Carregar Mais...
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section class="poke-desc">
+            <!-- Descrição do Pokemon Selecionado -->
+            <div class="desc-img">
+                <div id="img-fundo">
+                    <img src="/Assets/img/grass.png" />
+                </div>
+                <div id="img-poke">
+                    <img src="./Assets/img/1.svg"
+                         alt="Bulbassaur" />
+                </div>
+            </div>
+
+            <div class="poke-infos">
+                <div id="infos-title">
+                    <div id="title-nome">
+                        <h1>Bulbasaur</h1>
+                    </div>
+
+                    <div id="title-type">
+                        <ul class="types">
+                            <li class="type grass">Grass</li>
+                            <li class="type poison">poison</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div id="info-descriptions">
+                    <div class="infos-caracteristics">
+                        <ul>
+                            <li>Height: <span>0,7 m</span></li>
+                            <li>Weight: <span>6.9 kg</span></li>
+                            <li>Gender: <span>M/F</span></li>
+                            <li>Category: <span>Seed</span></li>
+                            <li>Abbilities: <span>Overgrow</span></li>
+
+                        </ul>
+                    </div>
+
+                    <div class="infos-stats">
+                        <div id="stats-Weakness">
+                            <div id="title">
+                                <h1>Weaknesses</h1>
+                            </div>
+                            <ul id="Weakness">
+                                <li class="type fire">fire</li>
+                                <li class="type psychic">psychic</li>
+                                <li class="type flying">flying</li>
+                                <li class="type ice">ice</li>
+
+                            </ul>
+                        </div>
+
+                        <div id="stats">
+                            <div id="stats-title">
+                                <h1>Stats</h1>
+                            </div>
+
+                            <div id="poke-stats">
+                                <div class="stats-values">
+                                    <ul id="hp-value">
+                                        <li></li>
+                                        <li></li>
+                                        <li></li>
+                                        <li></li>
+                                        <li></li>
+                                        <li></li>
+                                        <li></li>
+                                        <li class="active"></li>
+                                        <li class="active"></li>
+                                        <li class="active"></li>
+                                    </ul>
+                                    <h3>HP</h3>
+                                </div>
+                                <div class="stats-values">
+                                    <ul id="atack-value">
+                                        <li></li>
+                                        <li></li>
+                                        <li></li>
+                                        <li></li>
+                                        <li></li>
+                                        <li></li>
+                                        <li></li>
+                                        <li class="active"></li>
+                                        <li class="active"></li>
+                                        <li class="active"></li>
+                                    </ul>
+                                    <h3>Atack</h3>
+                                </div>
+                                <div class="stats-values">
+                                    <ul id="defense-value">
+                                        <li></li>
+                                        <li></li>
+                                        <li></li>
+                                        <li></li>
+                                        <li></li>
+                                        <li></li>
+                                        <li></li>
+                                        <li class="active"></li>
+                                        <li class="active"></li>
+                                        <li class="active"></li>
+                                    </ul>
+                                    <h3>Defense</h3>
+                                </div>
+                                <div class="stats-values">
+                                    <ul id="sa-value">
+                                        <li></li>
+                                        <li></li>
+                                        <li></li>
+                                        <li></li>
+                                        <li></li>
+                                        <li></li>
+                                        <li class="active"></li>
+                                        <li class="active"></li>
+                                        <li class="active"></li>
+                                        <li class="active"></li>
+                                    </ul>
+                                    <h3>Special Atack</h3>
+                                </div>
+                                <div class="stats-values">
+                                    <ul id="sd-value">
+                                        <li></li>
+                                        <li></li>
+                                        <li></li>
+                                        <li></li>
+                                        <li></li>
+                                        <li></li>
+                                        <li class="active"></li>
+                                        <li class="active"></li>
+                                        <li class="active"></li>
+                                        <li class="active"></li>
+                                    </ul>
+                                    <h3>Special Defense</h3>
+                                </div>
+                                <div class="stats-values">
+                                    <ul id="speed-value">
+                                        <li></li>
+                                        <li></li>
+                                        <li></li>
+                                        <li></li>
+                                        <li></li>
+                                        <li></li>
+                                        <li></li>
+                                        <li class="active"></li>
+                                        <li class="active"></li>
+                                        <li class="active"></li>
+                                    </ul>
+                                    <h3>Speed</h3>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Nosso JS -->
+    <script src="./Assets/js/pokemon-model.js"></script>
+    <script src="./Assets/js/poke-api.js"></script>
+    <script src="./Assets/js/main.js"></script>
+</body>
+</html>

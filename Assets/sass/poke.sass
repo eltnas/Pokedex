@@ -1,0 +1,363 @@
+@import "variables"
+@import "mixins"
+@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap')
+
+*
+    margin: 0px
+    padding: 0
+    box-sizing: border-box
+
+body
+    width: 100%
+    height: 100%
+    font-family: "Sagoe Ui"
+    background-image: url("../img/fundo-floresta.webp")
+    background-repeat: no-repeat
+    background-attachment: fixed
+    background-size: cover
+    background-color: $fundo-cor
+
+#overlay
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    background-color: rgba(0,0,0,.3)
+    pointer-events: none
+
+.normal
+    background-color: #a6a877
+.grass
+    background-color: #77c850
+.fire
+    background-color: #ee7f30
+.water
+    background-color: #678fee
+.electric
+    background-color: #f7cf2e
+.ice
+    background-color: #98d5d7
+.ground
+    background-color: #dfbf69
+.flying
+    background-color: #a98ff0
+.poison
+    background-color: #a040a0
+.fighting
+    background-color: #bf3029
+.psychic
+    background-color: #f65687
+.dark
+    background-color: #725847
+.rock
+    background-color: #b8a137
+.bug
+    background-color: #a8b720
+.ghost
+    background-color: #6e5896
+.steel
+    background-color: #b9b7cf
+.dragon
+    background-color: #6f38f6
+.fairy
+    background-color: #f9aec7
+
+
+#content
+    width: 90%
+    height: 100%
+    margin: 0 auto
+    display: flex
+    justify-content: space-around
+    justify-items: flex-start
+
+    & .poke-list
+        width: 20rem
+        height: 50rem
+        background-color: $fundo-cor
+        margin-top: 3rem
+        border-radius: 1rem
+        z-index: 99
+
+        & .title
+            width: 100%
+            height: 3rem
+            margin: 0 0 1rem 0
+            border-radius: 1rem 1rem 0 0
+            text-align: center
+            border-bottom: 1px solid black
+            background: linear-gradient(to bottom, $fundo-title-vermelho 0%, $fundo-title-vermelho 33%, $fundo-title-preto 10%, $fundo-title-preto 67%, $fundo-title-branco 67%, $fundo-title-branco 100%)
+
+            & img
+                height: 100%
+
+        & .list
+            width: 100%
+            height: calc(100% - 4rem)
+            overflow-y: auto
+            overflow-x: hidden
+            bottom: 10rem
+
+            &::-webkit-scrollbar
+                width: 15px
+
+            &::-webkit-scrollbar-track
+                background-color: #f0f0f0
+                border-radius: 8px
+
+            &::-webkit-scrollbar-thumb
+                background-color: #e3da7b
+                border-radius: 8px
+
+            & .lista
+                width: 100%
+                bottom: 2rem
+
+                & #pokemonList
+                    width: 100%
+                    padding-left: 6px
+                    bottom: 10px
+
+                    & .pokemon
+                        width: 100%
+                        height: 100px
+                        margin: .5rem 0
+                        background-color: #D9D9D9
+                        border-radius: 5px
+                        cursor: pointer
+
+                        display: flex
+                        justify-content: space-evenly
+
+                        & .poke-img
+                            width: 100px
+                            height: 100px
+
+                            & img
+                                width: 100%
+                                height: 100%
+
+                        & .poke-descricao
+                            width: calc(100% - 120px)
+                            padding: 10px
+
+                            & .name
+                                font-size: 30px
+                                color: #FFFFFF
+                                text-transform: capitalize
+
+                            & .detail
+                                width: 100%
+
+                                & .types
+                                    list-style: none
+                                    text-transform: capitalize
+                                    display: flex
+                                    justify-content: flex-start
+
+                                    & .type
+                                        width: 60px
+                                        height: 20px
+                                        border-radius: 10px
+                                        margin: 0 10px 0 0
+                                        text-align: center
+                                        color: #FFFFFF
+
+            & .pagination
+                width: 100%
+
+                & #loadMoreButton
+                    width: 90%
+                    height: 50px
+                    background-color: #D33368
+                    text-align: center
+                    border-radius: 2rem
+                    margin: 1rem 1rem
+                    color: #FFFFFF
+
+                    &:hover
+                        background-color: #74092d
+
+
+
+
+    & .poke-desc
+        width: 60rem
+        height: 50rem
+        background-color: $fundo-cor
+        margin-top: 3rem
+        border-radius: 1rem
+        z-index: 99
+
+        & .desc-img
+            width: 60rem
+            height: 15rem
+
+            & #img-fundo
+                position: absolute
+                width: 60rem
+                height: 15rem
+
+                & img
+                    width: 100%
+                    height: 100%
+                    min-width: 100%
+                    min-height: 100%
+                    border-radius: 10px 10px 0 0
+
+            & #img-poke
+                position: relative
+                width: 100%
+                height: 100%
+                display: grid
+                place-items: center
+
+                & img
+                    width: 14rem
+                    height: 14rem
+                    min-width: 14rem
+                    min-height: 14rem
+
+        & .poke-infos
+            width: 100%
+            height: 35rem
+
+            & #infos-title
+                width: 100%
+                height: 6rem
+                padding-top: -10px
+                display: flex
+                flex-direction: column
+                justify-content: center
+                align-items: center
+
+                & #title-nome
+                    font-size: 1em
+                    text-align: center
+                    text-transform: capitalize
+                    color: #1D1A1A
+                    margin-top: -15px
+
+                & #title-type
+                    width: 100%
+
+                    & ul
+                        display: flex
+                        flex-direction: row
+                        justify-content: center
+                        flex-wrap: wrap
+
+                        & li
+                            list-style-type: none
+                            text-transform: capitalize
+                            border-radius: 20px
+                            margin: -1rem 1rem 0 0
+                            width: 100px
+                            height: 40px
+                            display: grid
+                            place-items: center
+                            font-size: 1.3em
+                            color: #FFFFFF
+
+            & #info-descriptions
+                width: 100%
+                height: 28rem
+                display: flex
+                justify-content: space-around
+
+
+                & .infos-caracteristics
+                    flex: 2
+                    background-color: #3B37F3
+                    margin: 0 .5rem 0 1rem
+                    border-radius: 5px
+
+                    & ul
+                        margin: 10px 20px
+
+                        & li
+                            font-size: 1.6em
+                            list-style-type: none
+                            margin: 1rem 0
+                            color: #FFFFFF
+
+                & .infos-stats
+                    flex: 3
+                    background-color: #E9FBF8
+                    margin: 0 1rem 0 .5rem
+                    border-radius: 5px
+                    padding: 10px
+
+                    & #stats-Weakness
+                        width: 100%
+                        height: 5rem
+                        display: flex
+
+                        & #title
+                            width: 30%
+
+                            & h1
+                                font-size: 1.3em
+
+                        & #Weakness
+                            width: 70%
+                            display: flex
+                            justify-content: flex-start
+                            flex-wrap: wrap
+
+                            & li
+                                font-size: 1.3em
+                                text-align: center
+                                width: 70px
+                                height: 30px
+                                border-radius: 10px
+                                list-style-type: none
+                                margin: 1px 5px
+                                color: #FFFFFF
+
+                    & #stats
+                        height: 20rem
+                        margin: 15px 0
+                        background-color: #A4A4A4
+                        border-radius: 5px
+                        padding: 5px 0
+
+                        & #stats-title
+                            width: 100%
+                            height: 2rem
+                            text-align: center
+
+                            & h1
+                                font-size: 1.5em
+                                text-transform: uppercase
+                                margin: 0
+
+                        & #poke-stats
+                            width: 100%
+                            margin: 10px 0
+                            display: flex
+                            justify-content: space-around
+
+                            & .stats-values
+                                width: 4rem
+
+                                & ul
+                                    width: 4rem
+                                    height: 15rem
+
+                                    & li
+                                        list-style-type: none
+                                        width: 4rem
+                                        height: 1rem
+                                        border-radius: 10px
+                                        margin: 5px 0
+                                        background-color: #FFFFFF
+
+                                    & .active
+                                        background-color: #30A7D7
+
+                                & h3
+                                    text-align: center
+                                    font-size: 1em
+                                    margin: -15px 0 0 0
